@@ -91,7 +91,10 @@ const VerifyCode = ({navigation, route}) => {
       console.log('response==========', response);
       if (response.success) {
         if (screen === 'forgot') {
-          navigation.navigate('ResetPassword');
+          navigation.navigate('ResetPassword', {
+            data: sendEmail,
+            code: fullCode,
+          });
         } else {
           setVerificationState('success');
           dispatch(setUserData(response?.data));

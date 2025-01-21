@@ -11,7 +11,9 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import BaseSetting from '../../config/setting';
 import {getApiDataProgress} from '../../utils/apiHelper';
 
-const ResetPassword = ({navigation}) => {
+const ResetPassword = ({navigation, route}) => {
+  const sendEmail = route?.params?.data;
+  const code = route?.params?.code;
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -50,8 +52,8 @@ const ResetPassword = ({navigation}) => {
       setLoading(true);
 
       const data = {
-        email: '',
-        code: '',
+        email: sendEmail,
+        code: code,
         password: confirmPassword,
       };
 

@@ -209,7 +209,7 @@ const Signup = ({navigation}) => {
       <View style={styles.loginContainer}>
         <Text style={styles.loginText}>Already have an account? </Text>
         <TouchableOpacity
-          onPress={() => navigation.navigate('ResetPassword')}
+          onPress={() => navigation.navigate('Login')}
           disabled={loading}>
           <Text style={styles.loginLink}>Login</Text>
         </TouchableOpacity>
